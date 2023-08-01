@@ -1,17 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// Importing necessary modules from React and MUI (Material-UI) libraries
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// Importing the main component of the application from "./App"
+import App from "./App";
+
+// Create a theme instance using the MUI createTheme() function
+const theme = createTheme();
+
+// Using ReactDOM.createRoot() to create a root-level component for rendering
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// Rendering the main component of the application within the root using ReactDOM.render()
+// The application is wrapped in <React.StrictMode> for development mode features and warnings.
+// The <ThemeProvider> component allows us to provide the MUI theme to the entire app.
+// The theme instance created above is passed as a prop to the <ThemeProvider>.
+// The <App /> component represents the main component of the application to be rendered.
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
