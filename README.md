@@ -1,4 +1,5 @@
 Sample Login Page with Material-UI
+
 This is a simple login page project that demonstrates the integration of Material-UI for styling and uses dummy JSON data for authentication. The login page allows users to enter their username and password and verifies the credentials against the predefined authentication details.
 
 Getting Started
